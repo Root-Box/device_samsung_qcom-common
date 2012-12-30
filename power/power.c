@@ -184,7 +184,7 @@ static void cm_power_set_interactive(struct power_module *module, int on)
         sysfs_write(SAMPLING_RATE_ONDEMAND,
                 on ? SAMPLING_RATE_SCREEN_ON : SAMPLING_RATE_SCREEN_OFF);
     else
-        ALOGW("Skipping sysfs_write to sampling_rate -- NOT using ondemand");
+        ALOGV("Skipping sysfs_write to sampling_rate -- NOT using ondemand");
 }
 
 static void cm_power_init(struct power_module *module)
@@ -194,7 +194,7 @@ static void cm_power_init(struct power_module *module)
     if (strncmp(governor, "ondemand", 8) == 0)
         sysfs_write(SAMPLING_RATE_ONDEMAND, SAMPLING_RATE_SCREEN_ON);
     else
-        ALOGW("Skipping sysfs_write to sampling_rate -- NOT using ondemand");
+        ALOGV("Skipping sysfs_write to sampling_rate -- NOT using ondemand");
 }
 
 static struct hw_module_methods_t power_module_methods = {
